@@ -174,41 +174,39 @@ prefork provides, you can also do the following.
 
 =cut
 
-use 5.005;
+use 5.006;
 use strict;
+#use warnings;  # this might not be safe to turn on!
 use Carp              ();
 use List::Util   0.18 ();
 use Scalar::Util 0.18 ();
 
-use vars qw{$VERSION $FORKING %MODULES @NOTIFY};
-BEGIN {
-	$VERSION = '1.05';
+our $VERSION = '1.05';
 
-	# The main state variable for this package.
-	# Are we in preforking mode.
-	$FORKING = '';
+# The main state variable for this package.
+# Are we in preforking mode.
+our $FORKING = '';
 
-	# The queue of modules to load
-	%MODULES = ();
+# The queue of modules to load
+our %MODULES = ();
 
-	# The queue of notification callbacks
-	@NOTIFY = (
-		sub {
-			# Do a hash copy of Config to get everything
-			# inside of it preloaded.
-			require Config;
-			eval {
-				# Sometimes there is no Config_heavy.pl
-				require 'Config_heavy.pl';
-			};
-			my $copy = { %Config::Config };
-			return 1;
-		},
-	);
+# The queue of notification callbacks
+our @NOTIFY = (
+	sub {
+		# Do a hash copy of Config to get everything
+		# inside of it preloaded.
+		require Config;
+		eval {
+			# Sometimes there is no Config_heavy.pl
+			require 'Config_heavy.pl';
+		};
+		my $copy = { %Config::Config };
+		return 1;
+	},
+);
 
-	# Look for situations that need us to start in forking mode
-	$FORKING = 1 if $ENV{MOD_PERL};
-}
+# Look for situations that need us to start in forking mode
+$FORKING = 1 if $ENV{MOD_PERL};
 
 sub import {
 	return 1 unless $_[1];
