@@ -1,5 +1,7 @@
 Revision history for Perl extension prefork
 
+{{$NEXT}}
+
 1.04    2009-07-12
 	- Upgrading to Module::Install::DSL 0.91
 	- Sometimes there is no Config_heavy.pl
