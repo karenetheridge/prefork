@@ -1,6 +1,6 @@
 Revision history for Perl extension prefork
 
-{{$NEXT}}
+1.05      2018-10-27 01:16:51Z
           - distribution tooling updates
 
 1.04    2009-07-12
