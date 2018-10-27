@@ -1,6 +1,7 @@
 Revision history for Perl extension prefork
 
 {{$NEXT}}
+          - distribution tooling updates
 
 1.04    2009-07-12
 	- Upgrading to Module::Install::DSL 0.91

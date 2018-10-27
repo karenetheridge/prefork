@@ -111,7 +111,7 @@ In any use of C<prefork> as a pragma, you can only pass a single value
 as argument. Any additional arguments will be ignored. (This may throw
 an error in future versions).
 
-=head2 Compatbility with mod_perl and others
+=head2 Compatibility with mod_perl and others
 
 Part of the design of C<prefork>, and its minimalistic nature, is that it
 is intended to work easily with existing modules, needing only small
@@ -221,7 +221,7 @@ The 'prefork' function indicates that a module should be loaded before
 the process will fork. If already in forking mode the module will be
 loaded immediately.
 
-Otherwise it will be added to a queue to be loaded later if it recieves
+Otherwise it will be added to a queue to be loaded later if it receives
 instructions that it is going to be forking.
 
 Returns true on success, or dies on error.
@@ -258,7 +258,7 @@ When called, prefork.pm will immediately load all outstanding modules, and
 will set a flag so that any further 'prefork' calls will load the module
 at that time.
 
-Returns true, dieing as normal is there is a problem loading a module.
+Returns true, dying as normal is there is a problem loading a module.
 
 =cut
 
