@@ -181,7 +181,7 @@ use Carp              ();
 use List::Util   0.18 ();
 use Scalar::Util 0.18 ();
 
-our $VERSION = '1.05';
+our $VERSION = '1.06';
 
 # The main state variable for this package.
 # Are we in preforking mode.
