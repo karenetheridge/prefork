@@ -182,7 +182,7 @@ use Scalar::Util 0.18 ();
 
 use vars qw{$VERSION $FORKING %MODULES @NOTIFY};
 BEGIN {
-	$VERSION = '1.04';
+	$VERSION = '1.05';
 
 	# The main state variable for this package.
 	# Are we in preforking mode.
