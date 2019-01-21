@@ -53,6 +53,8 @@ In a third-party run-time loader
   
 =head1 INTRODUCTION
 
+=for stopwords CGI optimise
+
 The task of optimizing module loading in Perl tends to move in two different
 directions, depending on the context.
 
@@ -294,6 +296,8 @@ sub enable () {
 =pod
 
 =head2 notify &function
+
+=for stopwords initialised
 
 The C<notify> function is used to integrate support for modules other than
 prefork.pm itself.
